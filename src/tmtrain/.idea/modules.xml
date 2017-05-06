@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/tmtrain.iml" filepath="$PROJECT_DIR$/tmtrain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/train-common-util/train-common-util.iml" filepath="$PROJECT_DIR$/train-common-util/train-common-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/train-system/trainsystem.iml" filepath="$PROJECT_DIR$/train-system/trainsystem.iml" />
+    </modules>
+  </component>
+</project>
