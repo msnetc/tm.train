@@ -34,6 +34,8 @@ public class CityService implements  ICityService{
         return city;
     }
 
+    //todo: 分布式系统事务一致性解决方案 http://www.infoq.com/cn/articles/solution-of-distributed-system-transaction-consistency
+    //todo: 微服务架构的分布式事务解决方案 http://www.roncoo.com/article/detail/124243
     public int createCity(CityBo city) {
         int ret = cityDao.createCity(city);
         return ret;
