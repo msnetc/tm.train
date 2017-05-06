@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/*
+* 演示错误处理的api
+* */
 @Controller
 public class HelloController {
 

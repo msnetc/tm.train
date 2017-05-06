@@ -27,6 +27,7 @@
         <swagger.version>2.2.2</swagger.version>
         <gson.versin>2.8.0</gson.versin>
         <pagehelper.version>5.0.0</pagehelper.version>
+        <package.version>2.4.0</package.version>
     </properties>
 
 
