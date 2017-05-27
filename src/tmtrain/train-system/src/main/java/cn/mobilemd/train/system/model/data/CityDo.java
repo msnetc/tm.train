@@ -1,6 +1,8 @@
 package cn.mobilemd.train.system.model.data;
 
+import javax.persistence.Table;
 
+@Table(name = "city")
 public class CityDo {
 
     private Long id;

@@ -22,7 +22,7 @@ public class CityApi {
             @ApiImplicitParam(paramType="query",name="id",dataType="Long",required=true,value="姓名",defaultValue="1")
     })
     public ActionResult<CityDto> GetCity(@ApiParam("id") @RequestParam(value = "id", required = true) Long id) throws ApiException {
-         ActionResult<CityDto> response=new ActionResult<CityDto>();
+        ActionResult<CityDto> response=new ActionResult<CityDto>();
         CityBo city = cityService.getCity(id);
         CityDto cityDto=CityBoToDto(city);
         if(city !=null){

@@ -54,11 +54,17 @@
            <version>${mybatis-spring-boot}</version>
        </dependency>
 
-       <!--Mybatis Pagination Plugin-->
+       <!--mapper-->
+       <dependency>
+           <groupId>tk.mybatis</groupId>
+           <artifactId>mapper-spring-boot-starter</artifactId>
+           <version>1.1.0</version>
+       </dependency>
+       <!--pagehelper-->
        <dependency>
            <groupId>com.github.pagehelper</groupId>
-           <artifactId>pagehelper</artifactId>
-           <version>${pagehelper.version}</version>
+           <artifactId>pagehelper-spring-boot-starter</artifactId>
+           <version>1.1.0</version>
        </dependency>
 
 
