@@ -1,10 +1,13 @@
 package cn.mobilemd.train.system.model.data;
 
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name = "city")
 public class CityDo {
 
+    @Id
+    @Column(name = "Id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;

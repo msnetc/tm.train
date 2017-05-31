@@ -1,7 +1,9 @@
 package cn.mobilemd.train.system.service;
 
+import cn.mobilemd.train.common.PagerResult;
 import cn.mobilemd.train.system.dao.CountryDao;
 import cn.mobilemd.train.system.model.business.CountryBo;
+import cn.mobilemd.train.system.model.business.QueryCountryParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,4 +24,10 @@ public class CountryService {
     public boolean save(CountryBo country) {
         return countryDao.save(country);
     }
+
+    public PagerResult<CountryBo> QueryCountrys(QueryCountryParam param){
+        PagerResult<CountryBo> ret = new PagerResult<>();
+        return ret;
+    }
+
 }

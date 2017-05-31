@@ -1,15 +1,23 @@
 package cn.mobilemd.train.system.dao;
 
+import cn.mobilemd.train.common.PagerResult;
 import cn.mobilemd.train.system.mapper.CountryMapper;
 import cn.mobilemd.train.system.model.business.CountryBo;
+import cn.mobilemd.train.system.model.business.QueryCountryParam;
 import cn.mobilemd.train.system.model.data.CountryDo;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+
 
 @Component
 public class CountryDao {
+
+    @Resource
+    private SqlSession sqlSession;
 
     @Autowired
     private CountryMapper countryMapper;
@@ -36,5 +44,10 @@ public class CountryDao {
             cnt = countryMapper.insert(data);
         }
         return cnt>0;
+    }
+
+    public PagerResult<CountryBo> QueryCountrys(QueryCountryParam param){
+        PagerResult<CountryBo> ret = new PagerResult<>();
+        return ret;
     }
 }
