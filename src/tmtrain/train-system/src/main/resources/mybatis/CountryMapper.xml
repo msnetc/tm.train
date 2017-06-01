@@ -1,4 +1,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper  namespace="cn.mobilemd.train.system.mapper.CountryMapper">
 
+<mapper  namespace="cn.mobilemd.train.system.mapper.CountryMapper">
+<select id="QueryCountrys" parameterType="cn.mobilemd.train.system.model.business.QueryCountryParam" resultType="cn.mobilemd.train.system.model.business.CountryBo">
+    select Country.* from Country where 1=1
+    order by Country.Id desc LIMIT 0, 10
+</select>
+
+<select id="QueryCountrysCnt"  parameterType="cn.mobilemd.train.system.model.business.QueryCountryParam" resultType="integer">
+    select Count(Country.Id) from Country where 1=1
+</select>
 </mapper>

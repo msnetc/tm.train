@@ -6,11 +6,13 @@ import cn.mobilemd.train.system.model.business.CountryBo;
 import cn.mobilemd.train.system.model.business.QueryCountryParam;
 import cn.mobilemd.train.system.model.data.CountryDo;
 import org.apache.ibatis.session.SqlSession;
+import org.dozer.DozerBeanMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 
 @Component
@@ -20,12 +22,14 @@ public class CountryDao {
     private SqlSession sqlSession;
 
     @Autowired
+    private DozerBeanMapper mapper;
+    @Autowired
     private CountryMapper countryMapper;
 
     public CountryBo getById(Integer id) {
         CountryDo countryDo= countryMapper.selectByPrimaryKey(id);
-        CountryBo data = new CountryBo();
-        BeanUtils.copyProperties(countryDo, data);
+        if(countryDo ==null) return null;
+        CountryBo data = mapper.map(countryDo, CountryBo.class);
         return data;
     }
 
@@ -38,7 +42,7 @@ public class CountryDao {
         CountryDo data = new CountryDo();
         BeanUtils.copyProperties(country, data);
         int cnt=0;
-        if (country.getId() != null) {
+        if (country.getId() != 0) {
             cnt =countryMapper.updateByPrimaryKey(data);
         } else {
             cnt = countryMapper.insert(data);
@@ -48,6 +52,10 @@ public class CountryDao {
 
     public PagerResult<CountryBo> QueryCountrys(QueryCountryParam param){
         PagerResult<CountryBo> ret = new PagerResult<>();
+        List<CountryBo>  data = sqlSession.selectList("QueryCountrys", param);
+        Integer cnt =sqlSession.selectOne("QueryCountrysCnt", param);
+        ret.setData(data);
+        ret.setTotalCount(cnt);
         return ret;
     }
 }

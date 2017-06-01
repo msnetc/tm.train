@@ -27,6 +27,7 @@ public class CountryService {
 
     public PagerResult<CountryBo> QueryCountrys(QueryCountryParam param){
         PagerResult<CountryBo> ret = new PagerResult<>();
+        ret = countryDao.QueryCountrys(param);
         return ret;
     }
 

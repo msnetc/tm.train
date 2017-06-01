@@ -5,9 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * Created by yanjie.miao on 2017/5/27.
- */
+
 public class CountryBo {
 
     @Id

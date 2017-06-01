@@ -1,10 +1,8 @@
 package cn.mobilemd.train.system.model.business;
+import cn.mobilemd.train.common.PagerParamBase;
 
-/**
- * Created by yanjie.miao on 2017/5/27.
- */
-public class QueryCountryParam {
 
+public class QueryCountryParam  extends PagerParamBase{
     private String countryname;
 
     public String getCountryname() {

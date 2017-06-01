@@ -30,8 +30,7 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any())
                 .build();
     }
-//public static final ApiInfo DEFAULT =
-// new ApiInfo("Api Documentation", "Api Documentation", "1.0", "urn:tos", "Contact Email", "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0");
+
     private ApiInfo apiInfo() {
         ApiInfo apiInfo = new ApiInfo("SpringBoot学习demo",//大标题
                 "基于Springboot+Mybatis+Druid搭建的java项目",//小标题
